@@ -60,10 +60,8 @@ npm run dev
 ## Usage
 
 ### Creating an Image
-1. Select the type of image you want to generate from the dropdown menu.
-2. Enter a description of the image you want to generate.
+1. Navigate to the creationg page.
+2. Enter a description of the image you want to generate and your name.
 3. Click the "Generate" button.
+4. Post it to the community.
 
-### Saving an Image
-1. Click on the generated image to view it.
-2. Click the "Save Image" button to save it to Cloudinary.
