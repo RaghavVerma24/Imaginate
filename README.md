@@ -9,9 +9,7 @@
   </p>
 </p>
 
-<p float="left" align="center">
-  <img src="https://github.com/RaghavVerma24/Imaginate/blob/main/readme_imgs/post.png?raw=true" alt="Post Creation Screenshot"  height="400" /> 
-</p>
+![image](https://user-images.githubusercontent.com/59304737/226142522-780f8656-2cd3-4ec8-9deb-6205e79a5368.png)
 
 ## Installation
 
