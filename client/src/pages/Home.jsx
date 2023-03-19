@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Card, FormField, Loader } from '../components';
 
 const RenderCards = ({ data, title }) => {
-  console.log(data)
+  console.log("data", data)
+  
   if (data?.length > 0) {
     return (
       data.map((post) => <Card key={post._id} {...post} likes={Math.round(Math.random() * 5)}/>)
@@ -27,7 +28,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://dalle-arbb.onrender.com/api/v1/post', {
+      const response = await fetch('https://imaginate.onrender.com/api/v1/post', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
