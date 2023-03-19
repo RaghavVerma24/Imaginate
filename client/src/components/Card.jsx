@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { download, chat, like } from '../assets';
-import { downloadImage } from '../utils';
+import { downloadImage, getLikes, openChat } from '../utils';
 
 
 const Card = ({ _id, name, prompt, photo, likes }) => (
@@ -21,10 +21,10 @@ const Card = ({ _id, name, prompt, photo, likes }) => (
         </div>
         <div className="">
           <p className="float-left text-[#fff]">{likes}</p>
-          <button type="button" onClick={() => likes + 1} className="float-left outline-none bg-transparent border-none">
+          <button type="button" onClick={() => getLikes()} className="float-left outline-none bg-transparent border-none">
             <img src={like} alt="likes" className="ml-3 h-6 object-contain invert" />
           </button>
-          <button type="button" className="float-left outline-none bg-transparent border-none">
+          <button type="button" onClick={() => openChat()} className="float-left outline-none bg-transparent border-none">
             <img src={chat} alt="chat" className="ml-3 h-6 object-contain invert" />
           </button>
           <button type="button" onClick={() => downloadImage(_id, photo)} className="float-left ml-3 outline-none bg-transparent border-none">

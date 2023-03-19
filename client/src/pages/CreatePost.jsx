@@ -19,7 +19,7 @@ const CreatePost = () => {
     if(form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch('http://localhost:8080/api/v1/dalle', {
+        const response = await fetch('https://imaginate.onrender.com/api/v1/post', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const CreatePost = () => {
         setGeneratingImg(false);
       }
     } else {
-      alert ('Please enter a prompt');
+      alert ('Please enter a valid prompt');
     }
   }
 
@@ -46,7 +46,7 @@ const CreatePost = () => {
     if(form.prompt && form.photo) {
       setLoading(true);
       try{
-        const response = await fetch('http://localhost:8080/api/v1/post', {
+        const response = await fetch('https://imaginate.onrender.com/api/v1/post', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const CreatePost = () => {
         setLoading(false);
       }
     } else {
-      alert ('Please enter a prompt and generate an image, its free lol')
+      alert ('Please enter a prompt and generate an image!')
     }
   }
 
@@ -78,7 +78,7 @@ const CreatePost = () => {
   return (
     <section className='max-w-7xl mx-auto'>
       <div>
-        <h1 className='font-extrabold text-[#fff] text-[32px]'>Create</h1>
+        <h1 className='font-extrabold text-[#fff] text-[32px]'>Create AI Generated Images</h1>
         <p className='mt-2 text-[#666e75] text-[16px] max-w-[700px]'>Create imaginative and visually stunning images genereated by DALL-E AI</p>
       </div>
 
@@ -88,7 +88,7 @@ const CreatePost = () => {
             labelName="Your name"
             type='text'
             name='name'
-            placeholder='Ex., John Doe'
+            placeholder='First Last'
             value={form.name}
             handleChange={handleChange}
           />
@@ -96,7 +96,7 @@ const CreatePost = () => {
             labelName="Prompt"
             type='text'
             name='prompt'
-            placeholder='A Man falling in Love with his Computer, digital art'
+            placeholder='A dog petting a cat while sitting on a chair'
             value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe

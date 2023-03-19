@@ -25,7 +25,7 @@ const Home = () => {
             setLoading(true);
 
             try {
-                const response = await fetch('http://localhost:8080/api/v1/post', {
+                const response = await fetch('https://imaginate.onrender.com/api/v1/post', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -85,13 +85,13 @@ const Home = () => {
             ) : (
                 <>
                   {searchText && (
-                    <h2 className='font-medium text-[#666e75] text-xl mb-3'> Showing Results for <span className='text-[#222328]'>{searchText}</span></h2>
+                    <h2 className='font-medium text-[#666e75] text-xl mb-3'> Showing Results for <span className='text-[#6469ff]'>{searchText}</span></h2>
                   )}
                     <div className='grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3'>
                         {searchText ? (
                             <RenderCards 
                                 data={searchedResults}
-                                title='No search resoults found'
+                                title='No search results found'
                             />
                         ) : (
                             <RenderCards 
