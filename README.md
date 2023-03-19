@@ -57,6 +57,11 @@ cd client
 npm run dev
 ```
 
+6. Change Server endpoint url:
+```
+https://imaginate.onrender.com/api/v1/post" // Make all instances: "https://<projectname>.onrender.com/api/v1/post"
+```
+
 ## Usage
 
 ### Creating an Image
