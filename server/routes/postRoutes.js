@@ -28,7 +28,7 @@ router.route('/').get(async (req, res) => {
 //GET A POST
 router.route('/').post(async (req, res) => {
 
-    if (req.body.likes != null) {
+    if (req.body.length == 1) {
         console.log("reached")
     } else {
         try {
