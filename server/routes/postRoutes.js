@@ -35,6 +35,7 @@ router.route('/').post(async (req, res) => {
             name,
             prompt,
             photo: photoUrl.url,
+            likes: "0",
         });
 
         res.status(201).json({ success: true, data: newPost })
