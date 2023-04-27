@@ -11,7 +11,7 @@ const CreatePost = () => {
     name: '',
     prompt: '',
     photo:'',
-    likes: '1',
+    likes: '',
   });
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
