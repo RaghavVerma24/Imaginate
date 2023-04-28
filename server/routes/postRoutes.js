@@ -27,9 +27,19 @@ router.route('/').get(async (req, res) => {
 
 //GET A POST
 router.route('/').post(async (req, res) => {
+    if (req.body.likes != "") {
+        try {
+            const updatedLikes = await Post.updateOne(
+                { _id: req.body.id }, 
+                {
+                    $set:{ likes : req.body.likes }
+                }
+            );
 
-    if (req.body.length == 1) {
-        console.log("reached")
+            res.status(201).json({ success: true, data: updatedLikes })
+        } catch (error) {
+            res.status(500).json({ success: false, message: "Failed to update likes" })
+        }
     } else {
         try {
             const { name, prompt, photo } = req.body;

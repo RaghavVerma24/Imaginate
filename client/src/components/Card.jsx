@@ -4,17 +4,19 @@ import { download, chat, like } from '../assets';
 import { downloadImage, getLikes, openChat } from '../utils';
 
 const Card = ({ _id, name, prompt, photo, likes }) => {
-  const [postLikes, setPostLikes] = useState(document.querySelector("#likes").innerHTML);
+  const [postLikes, setPostLikes] = useState({ likes : (+likes + 1).toString(), id : _id});
 
+  console.log(likes)
   const updateLikes = async () => {
-    setPostLikes(+document.querySelector("#likes").innerHTML + 1)
+    setPostLikes({ likes : (+postLikes.likes + 1).toString(), id : _id})
+    console.log(postLikes)
     try {
       const response = await fetch('https://imaginate.onrender.com/api/v1/post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ likes: postLikes }),
+        body: JSON.stringify({ ...postLikes }),
       })
 
       const data = await response.json();
